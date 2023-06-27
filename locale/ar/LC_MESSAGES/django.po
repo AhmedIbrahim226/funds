@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-22 00:44+0300\n"
+"POT-Creation-Date: 2023-06-28 01:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,105 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: articles/models.py:7
+msgid "currency type"
+msgstr "نوع العمله"
+
+#: articles/models.py:8
+msgid "const amount"
+msgstr "الكميه الثابته"
+
+#: articles/models.py:14
+msgid "currency"
+msgstr "العمله"
+
+#: articles/models.py:15
+msgid "currencies"
+msgstr "العملات"
+
+#: articles/models.py:19
+msgid "link"
+msgstr "الرابط"
+
+#: articles/models.py:20
+msgid "owner"
+msgstr "المالك"
+
+#: articles/models.py:21
+msgid "created at"
+msgstr "أنشئ عند"
+
+#: articles/models.py:42 articles/models.py:47 articles/models.py:56
+#: articles/models.py:65
+msgid "article"
+msgstr "المقاله"
+
+#: articles/models.py:43
+msgid "articles"
+msgstr "المقالات"
+
+#: articles/models.py:48
+msgid "time"
+msgstr "الوقت"
+
+#: articles/models.py:49
+msgid "received decimal"
+msgstr "الرقم العشري المستلم"
+
+#: articles/models.py:52
+msgid "article statistic"
+msgstr "احصائية المقاله"
+
+#: articles/models.py:53
+msgid "article stats"
+msgstr "احصائيات المقاله"
+
+#: articles/models.py:57
+msgid "total time"
+msgstr "الوقت الكلي"
+
+#: articles/models.py:58
+msgid "total percentage"
+msgstr "النسبه المئويه الكليه"
+
+#: articles/models.py:61
+msgid "total daily article statistic"
+msgstr "اجمالي احصائية المقاله اليومي"
+
+#: articles/models.py:62
+msgid "total daily article stats"
+msgstr "اجمالي احصائيات المقاله اليومي"
+
+#: articles/models.py:66
+msgid "daily funds"
+msgstr "الرصيد اليومي"
+
+#: articles/models.py:69 articles/models.py:70
+msgid "total daily article funds"
+msgstr "اجمالي الرصيد المقاله اليومي"
+
+#: articles/models.py:74 users/models.py:61
+#, fuzzy
+#| msgid "user auth"
+msgid "user"
+msgstr "مصادقة المستخدم"
+
+#: articles/models.py:77
+msgid "total num articles read"
+msgstr "اجمالي عدد المقالات المقروءه"
+
+#: articles/models.py:78
+msgid "total time articles read"
+msgstr "اجمالي وقت المقالات المقروءه"
+
+#: articles/models.py:79
+msgid "total articles funds"
+msgstr "اجمالي رصيد المقالات"
+
+#: articles/models.py:86 articles/models.py:87
+msgid "user article stats"
+msgstr "احصائياات مقالات المستخدم"
 
 #: env/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -192,7 +291,7 @@ msgstr ""
 #: env/lib/python3.10/site-packages/django/db/models/base.py:1425
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s بهذا %(field_labels)s موجود بالفعل."
 
 #: env/lib/python3.10/site-packages/django/db/models/constraints.py:17
 #, python-format
@@ -215,7 +314,7 @@ msgstr ""
 #: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:131
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s بهذا %(field_label)s موجود بالفعل."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or
 #. 'month'. Eg: "Title must be unique for pub_date year"
@@ -1226,13 +1325,30 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: users/models.py:41
-msgid "email"
-msgstr "البريد الااكتروني"
+#: users/apps.py:7 users/models.py:62
+msgid "users"
+msgstr ""
 
-#: users/models.py:42
+#: users/fields.py:41
+#, python-brace-format
+msgid ""
+"Enter a valid phone number (e.g. {example_number}) or a number with an "
+"international call prefix."
+msgstr ""
+
+#. Translators: {example_number} is an international phone number.
+#: users/fields.py:47
+#, python-brace-format
+msgid "Enter a valid phone number (e.g. {example_number})."
+msgstr "أدخل رقم هاتف صالحًا (على سبيل المثال 12125552368+)."
+
+#: users/forms.py:14 users/forms.py:21 users/forms.py:52 users/models.py:42
 msgid "phone number"
 msgstr "رقم الهاتف"
+
+#: users/forms.py:22 users/forms.py:52 users/models.py:41
+msgid "email"
+msgstr "البريد الالكتروني"
 
 #: users/models.py:43
 msgid "first name"
@@ -1252,7 +1368,7 @@ msgstr "الاسم الرابع"
 
 #: users/models.py:48
 msgid "date joined"
-msgstr "تاريخ الانضمام"
+msgstr "تريخ الانضمام"
 
 #: users/models.py:49
 msgid "last login"
@@ -1264,7 +1380,7 @@ msgstr "طاقم"
 
 #: users/models.py:51
 msgid "Determines whether the user can log in to this administrator site."
-msgstr "يحدد ما إذا كان يمكن للمستخدم تسجيل الدخول إلى موقع المسؤول هذا"
+msgstr "يحدد ما إذا كان يمكن للمستخدم تسجيل الدخول إلى موقع المسؤول هذا."
 
 #: users/models.py:52
 msgid "active"
@@ -1274,12 +1390,9 @@ msgstr "نشط"
 msgid ""
 "Specifies whether or not this user should be treated as active. Uncheck this "
 "instead of deleting the accounts."
-msgstr "يحدد ما إذا كان يجب معاملة هذا المستخدم على أنه نشط أم لا. قم بإلغاء تحديد هذا بدلاً من حذف الحسابات."
+msgstr ""
+"يحدد ما إذا كان يجب معاملة هذا المستخدم على أنه نشط أم لا. قم بإلغاء تحديد "
+"هذا بدلاً من حذف الحسابات."
 
-#: users/models.py:61
-msgid "user auth"
-msgstr "مصادقة المستخدم"
-
-#: users/models.py:62
-msgid "users auth"
-msgstr "مصادقة المستخدم"
+#~ msgid "users auth"
+#~ msgstr "مصادقة المستخدمين"

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+{% for art in article_stats %}
+    <h3>Articles Read</h3>
+    {{art.total_num_articles_read}}
+    <h3>Articles Time</h3>
+    {{art.ret_total_time_read_in_hour}}
+    <h3>Articles Funds</h3>
+    {{art.total_articles_funds}} {{currency.get_currency_type_display}}
+{% endfor %}
+    <table>
+        <thead>
+            <tr>
+                <th>Article Id</th>
+                <th>Article Link</th>
+                <th>Create At</th>
+                <th>Reading Time</th>
+                <th>Total daily accept percentage</th>
+                <th>Total daily funds</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for art in articles %}
+            <tr>
+                <td>{{art.id}}</td>
+                <td>{{art.link}}</td>
+                <td>{{art.created_at}}</td>
+                <td>{{art.get_reading_time_for_article}}</td>
+                <td>{{art.get_stats.total_percentage}}</td>
+                <td>{{art.get_funds.daily_funds}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

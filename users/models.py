@@ -58,8 +58,8 @@ class UserAuth(AbstractBaseUser, PermissionsMixin):
     objects = UserAuthManager()
 
     class Meta:
-        verbose_name = _('user auth')
-        verbose_name_plural = _('users auth')
+        verbose_name = _('user')
+        verbose_name_plural = _('users')
 
     def __str__(self):
         return str(self.phone_number)

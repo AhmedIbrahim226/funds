@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Funds | register</title>
+</head>
+<body>
+    <form action="" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+    </form>
+    <a href="{% url 'login' %}">login here</a>
+
+</body>
+</html>
