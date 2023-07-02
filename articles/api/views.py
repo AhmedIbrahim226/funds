@@ -4,7 +4,7 @@ from .serializers import (
 )
 from ..models import ArticleStats
 from rest_framework.response import Response
-from ..utils import check_can_repeat_link_on_range_time
+from ..utils import check_can_repeat_link_on_range_time, from_query_to_dict
 
 class ArticleApiView(ModelViewSet):
     queryset = Article.objects.all()
@@ -12,10 +12,8 @@ class ArticleApiView(ModelViewSet):
     http_method_names = ('get', )
 
     def list(self, request, *args, **kwargs):
-        # print(request.data)
-        # print(request.user)
-        # return Response({'ff': 'ggg'})
-        serial = self.get_serializer(data=request.data)
+        data = from_query_to_dict(query=self.request.query_params)
+        serial = self.get_serializer(data=data)
 
         if serial.is_valid():
             is_read = serial.validated_data.get('is_read')
@@ -31,12 +29,12 @@ class ArticleApiView(ModelViewSet):
                         'link': link,
                         'created_at': article.created_at
                     }
-                    return Response(data)
+                    return Response(data, status=200)
 
                 serial.save(owner=request.user)
                 ArticleStats.objects.create(article=serial.instance, time=10, received_decimal=received_decimal)
-                return Response(serial.data)
+                return Response(serial.data, status=201)
 
-            return Response({'is_read': False})
-        return Response(serial.errors)
+            return Response({'is_read': False}, status=200)
+        return Response(serial.errors, status=400)
 
